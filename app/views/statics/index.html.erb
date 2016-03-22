@@ -11,36 +11,46 @@
   <br>
   <div class="row">
     <div class="col-md-4">
-      <div class="panel panel-primary">
+      <div class="panel panel-primary" style="min-height: 400px">
         <div class="panel-heading">
           <h3 class="panel-title text-center">eHealth Cloud Computing</h3>
         </div>
         <div class="panel-body">
           <p class="text-center"><i class="fa fa-cloud-upload fa-5x" style="color: deepskyblue"></i></p>
+          <hr>
+          <p class="text-center">Cloud computing has now become a necessity in the healthcare industry. At this point, it is a risk to not have a cloud host. Here's why ...</p>
         </div>
+          <p class="text-center"><%= link_to 'READ MORE', page_path('consult'), class: 'btn btn-primary' %></p>
       </div>
     </div>
     <div class="col-md-4">
-      <div class="panel panel-danger" style="min-height: 300px">
+      <div class="panel panel-danger" style="min-height: 400px">
         <div class="panel-heading">
           <h3 class="panel-title text-center">Security</h3>
         </div>
         <div class="panel-body">
-          <p class="text-center"><i class="fa fa-laptop fa-5x"></i></p>
+          <p class="text-center"><i class="fa fa-laptop fa-5x" style="color: darkslategrey"></i></p>
           <hr>
-          It is our responsibility to protect our clients' PHI from all kind of attacks. Ranging from snooping, to unauthorized access to data, to every sort of breaching and cyber-attacks/hacking. We also take on the responsibility for protecting client's data from the forces of nature: fires, storms, floods, etc. Your DATA is secured!
+          <p class="text-center">It is our responsibility to protect our clients' PHI from all kind of attacks. Ranging from snooping, to unauthorized access to data, to every sort of breaching and cyber-attacks/hacking. We also take on the responsibility for protecting client's data from the forces of nature: fires, storms, floods, etc. Your DATA is secured!
+          </p>
         </div>
+        <p class="text-center"><%= link_to 'READ MORE', page_path('security'), class: 'btn btn-primary' %></p>
       </div>
     </div>
     <div class="col-md-4">
-      <div class="panel panel-info">
+      <div class="panel panel-info" style="min-height: 400px">
         <div class="panel-heading">
           <h3 class="panel-title text-center">Mobility</h3>
         </div>
         <div class="panel-body">
-          <p class="text-center"><i class="fa fa-mobile fa-5x"></i></p>
-          <b>Remote Access Digital Health Solutions (RADHS)</b> is a solution that allows patients to remotely access and receive medical attention from their physicians from anywhere accross the globe.
+          <p class="text-center"><i class="fa fa-mobile fa-5x" style="color: #8b211e"></i></p>
+          <hr>
+          <p class="text-center">
+            <b>Remote Access Digital Health Solutions (RADHS)</b> is a solution that allows patients to remotely access and receive medical attention from their physicians from anywhere accross the globe.
+          </p>
         </div>
+        <p class="text-center"><%= link_to 'READ MORE', page_path('mobility'), class: 'btn btn-primary' %></p>
+
       </div>
     </div>
   </div>
