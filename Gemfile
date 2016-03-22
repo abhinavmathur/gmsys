@@ -58,4 +58,7 @@ gem 'codemirror-rails'
 gem 'jquery-turbolinks'
 gem 'carrierwave'
 gem 'fog-aws'
-
+gem 'high_voltage', '~> 2.4.0'
+gem 'friendly_id'
+gem 'rake', '~> 11.1.1'
+gem 'nprogress-rails'
