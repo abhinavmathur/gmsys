@@ -35,3 +35,4 @@
 //= require summernote
 //= require_tree .
 //= require turbolinks
+

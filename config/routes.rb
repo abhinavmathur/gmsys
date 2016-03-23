@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   root 'statics#index'
+  get 'statics/about' => 'statics#about', as: 'about', path: '/about'
 
   namespace :admin do
     root 'application#index'
