@@ -1,11 +1,36 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title><%= yield(:page_title) || 'GraceLife Medical Systems' %></title>
+  <% if content_for?(:page_title)  %>
+      <title><%= yield(:page_title) || 'GraceLife Medical Systems' %></title>
+  <% else %>
+      <title>GraceLife Medical Systems</title>
+  <% end %>
+  <% if content_for?(:meta_description) %>
+      <meta name="description" content="<%= yield(:meta_description) %>">
+      <meta property="og:description" content="<%= yield(:meta_description) %>">
+  <% else %>
+      <meta name="description" content="Gracelife Medical Systems Inc. is an emerging global leader in EMR & EHR
+   systems solutions in North America">
+      <meta property="og:description" content="Gracelife Medical Systems Inc. is an emerging global leader in EMR & EHR">
+  <% end %>
+  <% if content_for?(:page_title)  %>
+      <meta property="og:title" content="<%= yield(:page_title) %>"/>
+  <% else %>
+      <meta property="og:title" content="GraceLife Medical Systems"/>
+  <% end %>
+  <% if content_for?(:page_type) %>
+      <meta property="og:type" content="<%= yield(:page_type)%>">
+  <% else %>
+      <meta property="og:type" content="website">
+  <% end %>
+  <meta property="og:url" content="<%= request.original_url %>">
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
 </head>
 <body>
 <%= render 'layouts/navbar' %>

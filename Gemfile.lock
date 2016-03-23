@@ -117,6 +117,9 @@ GEM
       railties (>= 3.1.0)
       turbolinks
     json (1.8.3)
+    kaminari (0.16.3)
+      actionpack (>= 3.0.0)
+      activesupport (>= 3.0.0)
     loofah (2.0.3)
       nokogiri (>= 1.5.9)
     mail (2.6.3)
@@ -129,6 +132,8 @@ GEM
       mini_portile2 (~> 2.0.0.rc2)
     nprogress-rails (0.1.6.7)
     orm_adapter (0.5.0)
+    pundit (1.1.0)
+      activesupport (>= 3.0.0)
     rack (1.6.4)
     rack-test (0.6.3)
       rack (>= 1.0)
@@ -224,7 +229,9 @@ DEPENDENCIES
   jbuilder (~> 2.0)
   jquery-rails
   jquery-turbolinks
+  kaminari
   nprogress-rails
+  pundit
   rails (= 4.2.6)
   rake (~> 11.1.1)
   sass-rails (~> 5.0)

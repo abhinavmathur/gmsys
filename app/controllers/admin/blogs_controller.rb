@@ -13,7 +13,7 @@ class Admin::BlogsController < Admin::ApplicationController
 
   def create
     @blog = Blog.create(blog_params)
-    @blog.author == current_user
+    @blog.author = current_user
     if @blog.save
       flash[:success] = 'Blog post was successfully created !'
       redirect_to blog_path(@blog)
@@ -21,10 +21,6 @@ class Admin::BlogsController < Admin::ApplicationController
       flash[:danger] = 'Blog post was not created'
       render :new
     end
-  end
-
-  def show
-
   end
 
   def edit

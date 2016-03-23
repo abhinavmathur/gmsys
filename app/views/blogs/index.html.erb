@@ -1,3 +1,26 @@
-<% @blogs.each do |blog| %>
-    <%= link_to blog.title, blog_path(blog) %>
-<% end %>
+<!-- Main Content -->
+<%= content_for :page_title, 'Blog - GraceLife Medical Systems' %>
+<%= content_for :page_type, 'blog' %>
+<div class="container">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <% @blogs.each do |blog| %>
+      <div class="post-preview">
+          <h1 class="main-text-orange" style="text-decoration: none;">
+            <%= link_to blog.title, blog_path(blog) %>
+          </h1>
+          <h3 class="post-subtitle">
+            <%= "#{truncate(blog.description, length: 100)}" %>
+          </h3>
+        <p class="post-meta">Posted by <%= link_to blog.author.name, user_path(blog.author) %> on <%= blog.created_at.strftime("%e %B, %Y") %></p>
+      </div>
+      <% end %>
+      <hr>
+      <!-- Pager -->
+      <ul class="pager">
+        <li class="previous"><%= link_to_previous_page @blogs, '<- Newer' %></li>
+        <li class="next"><%= link_to_next_page @blogs, 'Older ->' %></li>
+      </ul>
+    </div>
+  </div>
+</div>

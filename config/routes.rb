@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   root 'statics#index'
   get 'statics/about' => 'statics#about', as: 'about', path: '/about'
-
+  devise_for :users
   namespace :admin do
     root 'application#index'
     resources :blogs, except: :show
@@ -11,5 +11,5 @@ Rails.application.routes.draw do
   resources :users, only: :show
   resources :blogs, only: [:show, :index]
 
-  devise_for :users
+
 end

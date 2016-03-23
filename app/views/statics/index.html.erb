@@ -7,6 +7,7 @@
       <p class="text-center text-primary">Pathfinders in eHealth IT Solutions. Providing best Solutions in EMR & Electronic Health Records (EHR) in a Secure IT environment</p>
     </div>
   </div>
+  <h2 class="text-center text-primary">Our Services</h2>
   <hr>
   <br>
   <div class="row">
@@ -20,7 +21,7 @@
           <hr>
           <p class="text-center">Cloud computing has now become a necessity in the healthcare industry. At this point, it is a risk to not have a cloud host. Here's why ...</p>
         </div>
-          <p class="text-center"><%= link_to 'READ MORE', page_path('consult'), class: 'btn btn-primary' %></p>
+        <p class="text-center"><%= link_to 'READ MORE', page_path('consult'), class: 'btn btn-primary' %></p>
       </div>
     </div>
     <div class="col-md-4">
@@ -53,5 +54,16 @@
 
       </div>
     </div>
+  </div>
+  <div class="row">
+    <h2 class="text-center text-primary">Featured Blog Posts</h2>
+    <hr>
+    <% @blogs.each do |blog| %>
+        <div class="col-md-4">
+          <h4 class="text-center text-info"><%= link_to blog.title, blog_path(blog) %></h4>
+          <h5 class="text-center"><%= blog.description %></h5>
+          <p class="text-center"><%= link_to 'Read it', blog_path(blog) %></p>
+        </div>
+    <% end %>
   </div>
 </div>
