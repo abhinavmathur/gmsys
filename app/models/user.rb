@@ -30,4 +30,5 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   has_many :blogs
+  mount_uploader :image, ImageUploader
 end
