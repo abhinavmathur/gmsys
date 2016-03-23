@@ -1,0 +1,17 @@
+<%= simple_form_for [:admin, @user], input_html: { class: 'form-horizontal'} do |f| %>
+    <%= f.input :name, required: true, autofocus: true, input_html: { class: 'form-control'} %>
+    <%= f.input :email, required: true, input_html: { class: 'form-control'} %>
+    <%= f.input :image, as: :file, label: 'Profile Picture' %>
+    <%= f.input :password, required: true %>
+    <%= f.input :password_confirmation, required: true %>
+    <%= f.input :work_title, input_html: { class: 'form-control'} %>
+    <%= f.input :description, input_html: { class: 'form-control'} %>
+    <%= f.input :facebook, input_html: { class: 'form-control'}, hint: 'www.facebook.com/zuck' %>
+    <%= f.input :twitter, input_html: { class: 'form-control'} %>
+    <%= f.input :linkedin, input_html: { class: 'form-control'} %>
+    <p>Click to make this user admin. An admin can edit everything on the website</p>
+    <%= f.input :admin %>
+    <p>Click this to make this user show up on the advisory team</p>
+    <%= f.input :advisory %>
+    <%= f.button :submit %>
+<% end %>

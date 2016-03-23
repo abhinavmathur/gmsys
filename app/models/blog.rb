@@ -2,14 +2,16 @@
 #
 # Table name: blogs
 #
-#  id         :integer          not null, primary key
-#  title      :string
-#  content    :text
-#  featured   :boolean          default("f")
-#  publish    :boolean          default("f")
-#  created_at :datetime         not null
-#  updated_at :datetime         not null
-#  author_id  :integer
+#  id          :integer          not null, primary key
+#  title       :string
+#  content     :text
+#  featured    :boolean          default("f")
+#  publish     :boolean          default("f")
+#  created_at  :datetime         not null
+#  updated_at  :datetime         not null
+#  author_id   :integer
+#  slug        :string
+#  description :text
 #
 
 class Blog < ActiveRecord::Base

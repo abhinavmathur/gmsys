@@ -17,6 +17,10 @@
 #  last_sign_in_ip        :string
 #  created_at             :datetime         not null
 #  updated_at             :datetime         not null
+#  description            :text
+#  advisory               :boolean          default("f")
+#  work_title             :string
+#  image                  :string
 #
 
 class User < ActiveRecord::Base

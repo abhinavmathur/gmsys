@@ -59,6 +59,9 @@ ActiveRecord::Schema.define(version: 20160323061507) do
     t.boolean  "advisory",               default: false
     t.string   "work_title"
     t.string   "image"
+    t.string   "facebook"
+    t.string   "twitter"
+    t.string   "linkedin"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
