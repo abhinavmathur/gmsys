@@ -1,0 +1,6 @@
+<%= simple_form_for [:admin, @blog], defaults: { required: false}, input_html: {class: 'form-horizontal'} do |f| %>
+    <%= f.input :title, autofocus: true, placeholder: 'Enter the blog title', required: true %>
+    <%= f.input :content, required: true, class: 'summernote' %>
+    <%= f.input :featured %>
+    <%= f.button :submit %>
+<% end %>
