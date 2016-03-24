@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   root 'statics#index'
   get 'statics/about' => 'statics#about', as: 'about', path: '/about'
-  devise_for :users
+  devise_for :users, controllers: { registrations: 'registrations' }
   namespace :admin do
     root 'application#index'
     resources :blogs, except: :show do

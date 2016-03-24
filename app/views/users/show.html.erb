@@ -5,7 +5,7 @@
       <h2><%= @user.name %></h2>
       <br>
       <% if @user.image? %>
-          <%= image_tag @user.image, size: '200x100' %>
+          <%= image_tag @user.image, class: 'img-responsive', alt: 'Profile Picture' %>
       <% else %>
           <%= gravatar_tag @user.email, size: '200', d: :identicon, html: { alt: 'profile picture'} %>
       <% end %>
@@ -17,7 +17,6 @@
       <% else %>
           <p class="text-center">This user likes to keep their description to themselves</p>
       <% end %>
-
     </div>
   </div>
 </div>
