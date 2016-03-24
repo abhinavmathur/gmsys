@@ -1,3 +1,23 @@
 <h2 class="text-center text-primary">Profile Page</h2>
-<%= "#{@user.name}" %>
-<%= image_tag @user.image %>
+<div class="container">
+  <div class="row">
+    <div class="col-md-4">
+      <h2><%= @user.name %></h2>
+      <br>
+      <% if @user.image? %>
+          <%= image_tag @user.image, size: '200x100' %>
+      <% else %>
+          <%= gravatar_tag @user.email, size: '200', d: :identicon, html: { alt: 'profile picture'} %>
+      <% end %>
+    </div>
+    <div class="col-md-8">
+      <h3 class="text-center text-info">Description</h3>
+      <% if @user.description %>
+          <p><%= @user.description %></p>
+      <% else %>
+          <p class="text-center">This user likes to keep their description to themselves</p>
+      <% end %>
+
+    </div>
+  </div>
+</div>

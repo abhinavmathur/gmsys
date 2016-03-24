@@ -1,10 +1,10 @@
 class Admin::BlogsController < Admin::ApplicationController
 
   before_action :authenticate_user!
-  before_action :set_blog, only: [:show, :edit, :update, :destroy]
+  before_action :set_blog, only: [:show, :edit, :update, :destroy, :publish, :unpublish]
 
   def index
-    @blogs = Blog.order('created_at DESC')
+    @blogs = Blog.order('created_at DESC').page(params[:page]).per(10)
   end
 
   def new
@@ -24,7 +24,6 @@ class Admin::BlogsController < Admin::ApplicationController
   end
 
   def edit
-
   end
 
   def update
@@ -41,6 +40,18 @@ class Admin::BlogsController < Admin::ApplicationController
     @blog.destroy
     flash[:success] = 'Blog was successfully deleted.'
     redirect_to root_path
+  end
+
+  def publish
+    @blog.update(publish: true)
+    flash[:success] = 'The blog has been successfully published !'
+    redirect_to blog_path(@blog)
+  end
+
+  def unpublish
+    @blog.update(publish: false)
+    flash[:success] = 'The blog has been unpublished !'
+    redirect_to blog_path(@blog)
   end
 
   private

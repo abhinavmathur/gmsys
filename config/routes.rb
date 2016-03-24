@@ -4,7 +4,12 @@ Rails.application.routes.draw do
   devise_for :users
   namespace :admin do
     root 'application#index'
-    resources :blogs, except: :show
+    resources :blogs, except: :show do
+      member do
+        put '/publish' => 'blogs#publish'
+        put '/unpublish' => 'blogs#unpublish'
+      end
+    end
     resources :users, except: :show
   end
 

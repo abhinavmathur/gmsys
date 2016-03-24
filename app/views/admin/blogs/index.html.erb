@@ -1,3 +1,30 @@
-<% @blogs.each do |blog| %>
-    <%= link_to blog.title, blog_path(blog) %>
-<% end %>
+<table class="table table-striped table-hover ">
+  <thead>
+  <tr>
+    <th>No.</th>
+    <th>Blog Post Title</th>
+    <th>Status</th>
+    <th>Featured Post</th>
+    <th>Options</th>
+  </tr>
+  </thead>
+  <tbody>
+  <% @blogs.each_with_index do |blog, index| %>
+      <tr class="info">
+        <td><%= index + 1 %></td>
+        <td><%= link_to blog.title, blog_path(blog) %></td>
+        <td><%= blog.publish? ? 'Online' : 'Not Published' %></td>
+        <td><%= blog.featured? ? 'Featured' : ''%></td>
+        <td>
+          <%= link_to 'Edit Blog', edit_admin_blog_path(blog), class: 'btn btn-info btn-sm' %>
+          <% if blog.publish? %>
+              <%= link_to 'Un-publish Blog', unpublish_admin_blog_path(blog),method: :put, class: 'btn btn-warning btn-sm' %>
+          <% else %>
+              <%= link_to 'Publish Blog', publish_admin_blog_path(blog), method: :put, class: 'btn btn-warning btn-sm' %>
+          <% end %>
+          <%= link_to 'Delete Post', admin_blog_path(blog), method: :delete, class: 'btn btn-danger btn-sm', data: { confirm: 'Are you sure ?'} %>
+        </td>
+      </tr>
+  <% end %>
+  </tbody>
+</table>

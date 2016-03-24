@@ -5,6 +5,11 @@ class BlogsController < ApplicationController
   end
 
   def show
-    @blog = Blog.friendly.find(params[:id])
+    begin
+      @blog = Blog.friendly.find(params[:id])
+    rescue ActiveRecord::RecordNotFound
+      flash[:danger] = 'The record you were looking for could not be found'
+      redirect_to root_path
+    end
   end
 end
